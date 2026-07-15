@@ -1,0 +1,16 @@
+title: Windows Defender Threat Detection Disabled
+logsource: 
+  # Windows Defender Logs
+  product: windows
+  service: windefend
+
+detection:
+  selection:
+    # The detection itself
+    EventID:
+      - 5001 # User has disabled Windows Defender Real-time protection
+      - 5010 # User has disabled Windows Defender Anti-Spyware protection
+      - 5012 # User has disabled Windows Defender Anti-Virus protection
+      - 5101 # Windows Defender Antimalware platform has expired
+
+  condition: selection
